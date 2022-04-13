@@ -19,7 +19,7 @@ namespace ADO.NET_Homework
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Homework_03());
+            Application.Run(new 作業四());
         }
     }
 }

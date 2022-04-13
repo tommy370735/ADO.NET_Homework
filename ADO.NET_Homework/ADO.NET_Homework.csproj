@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="作業四.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="作業四.Designer.cs">
+      <DependentUpon>作業四.cs</DependentUpon>
+    </Compile>
     <Compile Include="nwDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -88,6 +94,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="作業二.resx">
       <DependentUpon>作業二.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="作業四.resx">
+      <DependentUpon>作業四.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="nwDataSet.xsc">
       <DependentUpon>nwDataSet.xsd</DependentUpon>
