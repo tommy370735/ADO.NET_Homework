@@ -9,11 +9,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace ADO.NET_Homework
 {
-    public partial class 作業六 : Form
+    public partial class 作業六_1 : Form
     {
-        public 作業六()
+        public 作業六_1()
         {
             InitializeComponent();
             startset();
@@ -47,7 +48,7 @@ namespace ADO.NET_Homework
                             LinkLabel linklb = new LinkLabel();
                             linklb.Text = $"{datard[0].ToString()}";
                             linklb.Left = 30;
-                            linklb.Top = 100 + 30 * i;
+                            linklb.Top = 125 + 30 * i;
                             linklb.Tag = i;
                             linklb.Click += Linklb_Click;
                             this.splitContainer1.Panel1.Controls.Add(linklb);
@@ -71,19 +72,17 @@ namespace ADO.NET_Homework
 
         private void Linklb_Click(object sender, EventArgs e)
         {
-            
+            this.newPhotoTableTableAdapter1.Fill(this.travelDataSet1.NewPhotoTable);
+            this.bindingSource1.DataSource = this.travelDataSet1.NewPhotoTable;
+            this.dataGridView1.DataSource = this.bindingSource1;
+
+
+       
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            DialogResult result = this.openFileDialog1.ShowDialog();
-            if (result == DialogResult.OK)
-            {
-                this.pictureBox1.Image = Image.FromFile(this.openFileDialog1.FileName);
-            }
-            else
-            {
-                MessageBox.Show("Cancle");
-            }
+            Homework_6_2 H6 = new Homework_6_2();
+            H6.Show();
         }
 
 

@@ -69,22 +69,40 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>awDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="作業七_2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="作業七_2.Designer.cs">
+      <DependentUpon>作業七_2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="作業七_1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="作業七_1.Designer.cs">
+      <DependentUpon>作業七_1.cs</DependentUpon>
+    </Compile>
     <Compile Include="TravelDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>TravelDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="作業六.cs">
+    <Compile Include="作業六_1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="作業六.Designer.cs">
-      <DependentUpon>作業六.cs</DependentUpon>
+    <Compile Include="作業六_1.Designer.cs">
+      <DependentUpon>作業六_1.cs</DependentUpon>
     </Compile>
     <Compile Include="作業五.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="作業五.Designer.cs">
       <DependentUpon>作業五.cs</DependentUpon>
+    </Compile>
+    <Compile Include="作業六_2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="作業六_2.Designer.cs">
+      <DependentUpon>作業六_2.cs</DependentUpon>
     </Compile>
     <Compile Include="作業四.cs">
       <SubType>Form</SubType>
@@ -117,6 +135,12 @@
     <Compile Include="作業二.designer.cs">
       <DependentUpon>作業二.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="作業七_2.resx">
+      <DependentUpon>作業七_2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="作業七_1.resx">
+      <DependentUpon>作業七_1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -138,8 +162,11 @@
     <EmbeddedResource Include="作業五.resx">
       <DependentUpon>作業五.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="作業六.resx">
-      <DependentUpon>作業六.cs</DependentUpon>
+    <EmbeddedResource Include="作業六_1.resx">
+      <DependentUpon>作業六_1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="作業六_2.resx">
+      <DependentUpon>作業六_2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="作業四.resx">
       <DependentUpon>作業四.cs</DependentUpon>
