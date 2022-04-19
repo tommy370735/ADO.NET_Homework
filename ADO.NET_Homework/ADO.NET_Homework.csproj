@@ -219,10 +219,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="TravelDB.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="TravelDB_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>TravelDB.mdf</DependentUpon>
     </Content>
   </ItemGroup>

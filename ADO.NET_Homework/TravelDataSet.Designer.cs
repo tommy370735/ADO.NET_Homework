@@ -931,6 +931,8 @@ namespace ADO.NET_Homework {
             
             private global::System.Data.DataColumn columnCityName;
             
+            private global::System.Data.DataColumn columnDescription;
+            
             private global::System.Data.DataColumn columnPhoto;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -984,6 +986,14 @@ namespace ADO.NET_Homework {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DescriptionColumn {
+                get {
+                    return this.columnDescription;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn PhotoColumn {
                 get {
                     return this.columnPhoto;
@@ -1027,11 +1037,12 @@ namespace ADO.NET_Homework {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public NewPhotoTableRow AddNewPhotoTableRow(string CityName, byte[] Photo) {
+            public NewPhotoTableRow AddNewPhotoTableRow(string CityName, string Description, byte[] Photo) {
                 NewPhotoTableRow rowNewPhotoTableRow = ((NewPhotoTableRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         CityName,
+                        Description,
                         Photo};
                 rowNewPhotoTableRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowNewPhotoTableRow);
@@ -1064,6 +1075,7 @@ namespace ADO.NET_Homework {
             internal void InitVars() {
                 this.columnPhotoID = base.Columns["PhotoID"];
                 this.columnCityName = base.Columns["CityName"];
+                this.columnDescription = base.Columns["Description"];
                 this.columnPhoto = base.Columns["Photo"];
             }
             
@@ -1074,6 +1086,8 @@ namespace ADO.NET_Homework {
                 base.Columns.Add(this.columnPhotoID);
                 this.columnCityName = new global::System.Data.DataColumn("CityName", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCityName);
+                this.columnDescription = new global::System.Data.DataColumn("Description", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDescription);
                 this.columnPhoto = new global::System.Data.DataColumn("Photo", typeof(byte[]), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPhoto);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
@@ -1086,6 +1100,7 @@ namespace ADO.NET_Homework {
                 this.columnPhotoID.Unique = true;
                 this.columnCityName.AllowDBNull = false;
                 this.columnCityName.MaxLength = 50;
+                this.columnDescription.MaxLength = 2147483647;
                 this.columnPhoto.AllowDBNull = false;
             }
             
@@ -1392,6 +1407,22 @@ namespace ADO.NET_Homework {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Description {
+                get {
+                    try {
+                        return ((string)(this[this.tableNewPhotoTable.DescriptionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("資料表 \'NewPhotoTable\' 中資料行 \'Description\' 的值是 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableNewPhotoTable.DescriptionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public byte[] Photo {
                 get {
                     return ((byte[])(this[this.tableNewPhotoTable.PhotoColumn]));
@@ -1399,6 +1430,18 @@ namespace ADO.NET_Homework {
                 set {
                     this[this.tableNewPhotoTable.PhotoColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsDescriptionNull() {
+                return this.IsNull(this.tableNewPhotoTable.DescriptionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetDescriptionNull() {
+                this[this.tableNewPhotoTable.DescriptionColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -2289,6 +2332,7 @@ namespace ADO.NET_Homework.TravelDataSetTableAdapters {
             tableMapping.DataSetTable = "NewPhotoTable";
             tableMapping.ColumnMappings.Add("PhotoID", "PhotoID");
             tableMapping.ColumnMappings.Add("CityName", "CityName");
+            tableMapping.ColumnMappings.Add("Description", "Description");
             tableMapping.ColumnMappings.Add("Photo", "Photo");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
@@ -2300,19 +2344,20 @@ namespace ADO.NET_Homework.TravelDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CityName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CityName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[NewPhotoTable] ([CityName], [Photo]) VALUES (@CityName, @Photo" +
-                ");\r\nSELECT PhotoID, CityName, Photo FROM NewPhotoTable WHERE (PhotoID = SCOPE_ID" +
-                "ENTITY())";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[NewPhotoTable] ([CityName], [Description], [Photo]) VALUES (@C" +
+                "ityName, @Description, @Photo);\r\nSELECT PhotoID, CityName, Description, Photo FR" +
+                "OM NewPhotoTable WHERE (PhotoID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CityName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CityName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Description", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Description", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Photo", global::System.Data.SqlDbType.Image, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Photo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[NewPhotoTable] SET [CityName] = @CityName, [Photo] = @Photo WHERE (" +
-                "([PhotoID] = @Original_PhotoID) AND ([CityName] = @Original_CityName));\r\nSELECT " +
-                "PhotoID, CityName, Photo FROM NewPhotoTable WHERE (PhotoID = @PhotoID)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[NewPhotoTable] SET [CityName] = @CityName, [Description] = @Description, [Photo] = @Photo WHERE (([PhotoID] = @Original_PhotoID) AND ([CityName] = @Original_CityName));
+SELECT PhotoID, CityName, Description, Photo FROM NewPhotoTable WHERE (PhotoID = @PhotoID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CityName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CityName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Description", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Description", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Photo", global::System.Data.SqlDbType.Image, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Photo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PhotoID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PhotoID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CityName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CityName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -2332,7 +2377,7 @@ namespace ADO.NET_Homework.TravelDataSetTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT PhotoID, CityName, Photo FROM dbo.NewPhotoTable";
+            this._commandCollection[0].CommandText = "SELECT PhotoID, CityName, Description, Photo FROM dbo.NewPhotoTable";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -2421,18 +2466,24 @@ namespace ADO.NET_Homework.TravelDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string CityName, byte[] Photo) {
+        public virtual int Insert(string CityName, string Description, byte[] Photo) {
             if ((CityName == null)) {
                 throw new global::System.ArgumentNullException("CityName");
             }
             else {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((string)(CityName));
             }
+            if ((Description == null)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Description));
+            }
             if ((Photo == null)) {
                 throw new global::System.ArgumentNullException("Photo");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((byte[])(Photo));
+                this.Adapter.InsertCommand.Parameters[2].Value = ((byte[])(Photo));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -2454,27 +2505,33 @@ namespace ADO.NET_Homework.TravelDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string CityName, byte[] Photo, int Original_PhotoID, string Original_CityName, int PhotoID) {
+        public virtual int Update(string CityName, string Description, byte[] Photo, int Original_PhotoID, string Original_CityName, int PhotoID) {
             if ((CityName == null)) {
                 throw new global::System.ArgumentNullException("CityName");
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(CityName));
             }
+            if ((Description == null)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Description));
+            }
             if ((Photo == null)) {
                 throw new global::System.ArgumentNullException("Photo");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((byte[])(Photo));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((byte[])(Photo));
             }
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Original_PhotoID));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_PhotoID));
             if ((Original_CityName == null)) {
                 throw new global::System.ArgumentNullException("Original_CityName");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Original_CityName));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Original_CityName));
             }
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(PhotoID));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(PhotoID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -2495,8 +2552,8 @@ namespace ADO.NET_Homework.TravelDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string CityName, byte[] Photo, int Original_PhotoID, string Original_CityName) {
-            return this.Update(CityName, Photo, Original_PhotoID, Original_CityName, Original_PhotoID);
+        public virtual int Update(string CityName, string Description, byte[] Photo, int Original_PhotoID, string Original_CityName) {
+            return this.Update(CityName, Description, Photo, Original_PhotoID, Original_CityName, Original_PhotoID);
         }
     }
     

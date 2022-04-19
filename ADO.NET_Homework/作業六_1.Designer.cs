@@ -34,15 +34,12 @@ namespace ADO.NET_Homework
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.splitContainer3 = new System.Windows.Forms.SplitContainer();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.newPhotoTableTableAdapter1 = new ADO.NET_Homework.TravelDataSetTableAdapters.NewPhotoTableTableAdapter();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.travelDataSet1 = new ADO.NET_Homework.TravelDataSet();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -50,7 +47,10 @@ namespace ADO.NET_Homework
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
+            this.splitContainer3.Panel1.SuspendLayout();
+            this.splitContainer3.Panel2.SuspendLayout();
+            this.splitContainer3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.travelDataSet1)).BeginInit();
             this.SuspendLayout();
@@ -82,12 +82,7 @@ namespace ADO.NET_Homework
             // 
             // splitContainer2.Panel2
             // 
-            this.splitContainer2.Panel2.Controls.Add(this.button5);
-            this.splitContainer2.Panel2.Controls.Add(this.button4);
-            this.splitContainer2.Panel2.Controls.Add(this.button3);
-            this.splitContainer2.Panel2.Controls.Add(this.button2);
-            this.splitContainer2.Panel2.Controls.Add(this.dataGridView1);
-            this.splitContainer2.Panel2.Controls.Add(this.listBox1);
+            this.splitContainer2.Panel2.Controls.Add(this.splitContainer3);
             this.splitContainer2.Size = new System.Drawing.Size(706, 450);
             this.splitContainer2.SplitterDistance = 77;
             this.splitContainer2.TabIndex = 0;
@@ -113,63 +108,36 @@ namespace ADO.NET_Homework
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(73, 27);
             this.button1.TabIndex = 1;
-            this.button1.Text = "Tool CRUD";
+            this.button1.Text = "新增相片";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // listBox1
+            // splitContainer3
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 12;
-            this.listBox1.Location = new System.Drawing.Point(435, 42);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(212, 184);
-            this.listBox1.TabIndex = 3;
+            this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer3.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer3.Name = "splitContainer3";
+            this.splitContainer3.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
-            // dataGridView1
+            // splitContainer3.Panel1
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(54, 42);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(301, 184);
-            this.dataGridView1.TabIndex = 4;
+            this.splitContainer3.Panel1.Controls.Add(this.textBox1);
             // 
-            // button2
+            // splitContainer3.Panel2
             // 
-            this.button2.Location = new System.Drawing.Point(75, 256);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(44, 36);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "<<";
-            this.button2.UseVisualStyleBackColor = true;
+            this.splitContainer3.Panel2.Controls.Add(this.flowLayoutPanel1);
+            this.splitContainer3.Size = new System.Drawing.Size(706, 369);
+            this.splitContainer3.SplitterDistance = 33;
+            this.splitContainer3.TabIndex = 0;
             // 
-            // button3
+            // flowLayoutPanel1
             // 
-            this.button3.Location = new System.Drawing.Point(125, 256);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(44, 36);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "<";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(225, 256);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(44, 36);
-            this.button4.TabIndex = 7;
-            this.button4.Text = ">";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(275, 256);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(44, 36);
-            this.button5.TabIndex = 8;
-            this.button5.Text = ">>";
-            this.button5.UseVisualStyleBackColor = true;
+            this.flowLayoutPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(706, 332);
+            this.flowLayoutPanel1.TabIndex = 0;
             // 
             // newPhotoTableTableAdapter1
             // 
@@ -179,6 +147,17 @@ namespace ADO.NET_Homework
             // 
             this.travelDataSet1.DataSetName = "TravelDataSet";
             this.travelDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox1.Font = new System.Drawing.Font("標楷體", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.textBox1.Location = new System.Drawing.Point(0, 0);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(706, 33);
+            this.textBox1.TabIndex = 0;
             // 
             // 作業六_1
             // 
@@ -195,7 +174,11 @@ namespace ADO.NET_Homework
             this.splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.splitContainer3.Panel1.ResumeLayout(false);
+            this.splitContainer3.Panel1.PerformLayout();
+            this.splitContainer3.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
+            this.splitContainer3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.travelDataSet1)).EndInit();
             this.ResumeLayout(false);
@@ -208,14 +191,11 @@ namespace ADO.NET_Homework
         private System.Windows.Forms.SplitContainer splitContainer2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.ListBox listBox1;
         private TravelDataSetTableAdapters.NewPhotoTableTableAdapter newPhotoTableTableAdapter1;
         private System.Windows.Forms.BindingSource bindingSource1;
         private TravelDataSet travelDataSet1;
+        private System.Windows.Forms.SplitContainer splitContainer3;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
