@@ -18,6 +18,22 @@ namespace ADO.NET_Homework
         {
             InitializeComponent();
             startsetting();
+            this.photoPictureBox.AllowDrop = true;
+            this.photoPictureBox.DragEnter += PhotoPictureBox_DragEnter;
+            this.photoPictureBox.DragDrop += PhotoPictureBox_DragDrop;
+        }
+
+        private void PhotoPictureBox_DragDrop(object sender, DragEventArgs e)
+        {
+            string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+            this.photoPictureBox.Image = Image.FromFile(files[0]);
+            descriptionTextBox.Clear();
+            descriptionTextBox.Focus();
+        }
+
+        private void PhotoPictureBox_DragEnter(object sender, DragEventArgs e)
+        {
+            e.Effect = DragDropEffects.Copy;
         }
 
         private void startsetting()
@@ -51,6 +67,8 @@ namespace ADO.NET_Homework
             if (result == DialogResult.OK)
             {
                 this.photoPictureBox.Image = Image.FromFile(this.openFileDialog1.FileName);
+                descriptionTextBox.Clear();
+                descriptionTextBox.Focus();
             }
             else
             {
@@ -98,6 +116,7 @@ namespace ADO.NET_Homework
                     this.newPhotoTableTableAdapter.Fill(this.travelDataSet.NewPhotoTable);
                     this.newPhotoTableBindingSource.DataSource = this.travelDataSet.NewPhotoTable;
                     this.newPhotoTableDataGridView.DataSource = this.newPhotoTableBindingSource;
+                    this.newPhotoTableBindingSource.MoveLast();
                 }
             }
             catch (Exception ex)

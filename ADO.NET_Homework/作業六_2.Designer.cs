@@ -31,10 +31,10 @@ namespace ADO.NET_Homework
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label photoLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Homework_6_2));
             System.Windows.Forms.Label cityNameLabel;
             System.Windows.Forms.Label descriptionLabel;
             System.Windows.Forms.Label photoLabel1;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Homework_6_2));
             this.button1 = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.travelDataSet = new ADO.NET_Homework.TravelDataSet();
@@ -83,6 +83,33 @@ namespace ADO.NET_Homework
             photoLabel.Size = new System.Drawing.Size(35, 12);
             photoLabel.TabIndex = 7;
             photoLabel.Text = "Photo:";
+            // 
+            // cityNameLabel
+            // 
+            cityNameLabel.AutoSize = true;
+            cityNameLabel.Location = new System.Drawing.Point(509, 59);
+            cityNameLabel.Name = "cityNameLabel";
+            cityNameLabel.Size = new System.Drawing.Size(58, 12);
+            cityNameLabel.TabIndex = 9;
+            cityNameLabel.Text = "City Name:";
+            // 
+            // descriptionLabel
+            // 
+            descriptionLabel.AutoSize = true;
+            descriptionLabel.Location = new System.Drawing.Point(509, 85);
+            descriptionLabel.Name = "descriptionLabel";
+            descriptionLabel.Size = new System.Drawing.Size(61, 12);
+            descriptionLabel.TabIndex = 11;
+            descriptionLabel.Text = "Description:";
+            // 
+            // photoLabel1
+            // 
+            photoLabel1.AutoSize = true;
+            photoLabel1.Location = new System.Drawing.Point(509, 110);
+            photoLabel1.Name = "photoLabel1";
+            photoLabel1.Size = new System.Drawing.Size(35, 12);
+            photoLabel1.TabIndex = 13;
+            photoLabel1.Text = "Photo:";
             // 
             // button1
             // 
@@ -297,15 +324,6 @@ namespace ADO.NET_Homework
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // cityNameLabel
-            // 
-            cityNameLabel.AutoSize = true;
-            cityNameLabel.Location = new System.Drawing.Point(509, 59);
-            cityNameLabel.Name = "cityNameLabel";
-            cityNameLabel.Size = new System.Drawing.Size(58, 12);
-            cityNameLabel.TabIndex = 9;
-            cityNameLabel.Text = "City Name:";
-            // 
             // cityNameComboBox
             // 
             this.cityNameComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.newPhotoTableBindingSource, "CityName", true));
@@ -315,15 +333,6 @@ namespace ADO.NET_Homework
             this.cityNameComboBox.Size = new System.Drawing.Size(171, 20);
             this.cityNameComboBox.TabIndex = 10;
             // 
-            // descriptionLabel
-            // 
-            descriptionLabel.AutoSize = true;
-            descriptionLabel.Location = new System.Drawing.Point(509, 85);
-            descriptionLabel.Name = "descriptionLabel";
-            descriptionLabel.Size = new System.Drawing.Size(61, 12);
-            descriptionLabel.TabIndex = 11;
-            descriptionLabel.Text = "Description:";
-            // 
             // descriptionTextBox
             // 
             this.descriptionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.newPhotoTableBindingSource, "Description", true));
@@ -331,15 +340,6 @@ namespace ADO.NET_Homework
             this.descriptionTextBox.Name = "descriptionTextBox";
             this.descriptionTextBox.Size = new System.Drawing.Size(171, 22);
             this.descriptionTextBox.TabIndex = 12;
-            // 
-            // photoLabel1
-            // 
-            photoLabel1.AutoSize = true;
-            photoLabel1.Location = new System.Drawing.Point(509, 110);
-            photoLabel1.Name = "photoLabel1";
-            photoLabel1.Size = new System.Drawing.Size(35, 12);
-            photoLabel1.TabIndex = 13;
-            photoLabel1.Text = "Photo:";
             // 
             // photoPictureBox
             // 
@@ -369,7 +369,7 @@ namespace ADO.NET_Homework
             this.Controls.Add(this.newPhotoTableBindingNavigator);
             this.Controls.Add(this.button1);
             this.Name = "Homework_6_2";
-            this.Text = "作業六_2";
+            this.Text = "相片管理_2";
             this.Load += new System.EventHandler(this.Homework_6_2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.travelDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.newPhotoTableBindingSource)).EndInit();

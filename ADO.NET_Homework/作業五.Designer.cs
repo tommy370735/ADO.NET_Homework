@@ -72,7 +72,7 @@ namespace ADO.NET_Homework
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(784, 78);
+            this.button2.Location = new System.Drawing.Point(753, 84);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 99;
@@ -111,7 +111,7 @@ namespace ADO.NET_Homework
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem});
-            this.bindingNavigator1.Location = new System.Drawing.Point(42, 179);
+            this.bindingNavigator1.Location = new System.Drawing.Point(11, 180);
             this.bindingNavigator1.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.bindingNavigator1.MoveLastItem = this.bindingNavigatorMoveLastItem;
             this.bindingNavigator1.MoveNextItem = this.bindingNavigatorMoveNextItem;
@@ -212,7 +212,7 @@ namespace ADO.NET_Homework
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label4.Location = new System.Drawing.Point(155, 129);
+            this.label4.Location = new System.Drawing.Point(124, 130);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(0, 21);
@@ -220,7 +220,7 @@ namespace ADO.NET_Homework
             // 
             // button16
             // 
-            this.button16.Location = new System.Drawing.Point(297, 122);
+            this.button16.Location = new System.Drawing.Point(266, 123);
             this.button16.Margin = new System.Windows.Forms.Padding(2);
             this.button16.Name = "button16";
             this.button16.Size = new System.Drawing.Size(46, 39);
@@ -231,7 +231,7 @@ namespace ADO.NET_Homework
             // 
             // button15
             // 
-            this.button15.Location = new System.Drawing.Point(247, 122);
+            this.button15.Location = new System.Drawing.Point(216, 123);
             this.button15.Margin = new System.Windows.Forms.Padding(2);
             this.button15.Name = "button15";
             this.button15.Size = new System.Drawing.Size(46, 39);
@@ -242,7 +242,7 @@ namespace ADO.NET_Homework
             // 
             // button14
             // 
-            this.button14.Location = new System.Drawing.Point(104, 122);
+            this.button14.Location = new System.Drawing.Point(73, 123);
             this.button14.Margin = new System.Windows.Forms.Padding(2);
             this.button14.Name = "button14";
             this.button14.Size = new System.Drawing.Size(46, 39);
@@ -253,7 +253,7 @@ namespace ADO.NET_Homework
             // 
             // button13
             // 
-            this.button13.Location = new System.Drawing.Point(54, 122);
+            this.button13.Location = new System.Drawing.Point(23, 123);
             this.button13.Margin = new System.Windows.Forms.Padding(2);
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(46, 39);
@@ -265,7 +265,7 @@ namespace ADO.NET_Homework
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(916, 80);
+            this.comboBox1.Location = new System.Drawing.Point(874, 87);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 20);
             this.comboBox1.TabIndex = 91;
@@ -274,7 +274,7 @@ namespace ADO.NET_Homework
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(879, 83);
+            this.label2.Location = new System.Drawing.Point(838, 95);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(30, 12);
             this.label2.TabIndex = 90;
@@ -282,7 +282,7 @@ namespace ADO.NET_Homework
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(628, 78);
+            this.button1.Location = new System.Drawing.Point(610, 83);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(137, 23);
             this.button1.TabIndex = 88;
@@ -293,7 +293,7 @@ namespace ADO.NET_Homework
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(497, 87);
+            this.label1.Location = new System.Drawing.Point(466, 88);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(11, 12);
             this.label1.TabIndex = 89;
@@ -301,14 +301,14 @@ namespace ADO.NET_Homework
             // 
             // dateTimePicker2
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(514, 83);
+            this.dateTimePicker2.Location = new System.Drawing.Point(483, 84);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(108, 22);
             this.dateTimePicker2.TabIndex = 87;
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(382, 83);
+            this.dateTimePicker1.Location = new System.Drawing.Point(351, 84);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(108, 22);
             this.dateTimePicker1.TabIndex = 86;
@@ -316,7 +316,7 @@ namespace ADO.NET_Homework
             // pictureBox1
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(42, 231);
+            this.pictureBox1.Location = new System.Drawing.Point(11, 232);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(302, 182);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -330,10 +330,10 @@ namespace ADO.NET_Homework
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(378, 155);
+            this.dataGridView1.Location = new System.Drawing.Point(347, 156);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(659, 258);
+            this.dataGridView1.Size = new System.Drawing.Size(648, 258);
             this.dataGridView1.TabIndex = 101;
             // 
             // productPhotoTableAdapter1
@@ -347,7 +347,7 @@ namespace ADO.NET_Homework
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(53, 78);
+            this.button3.Location = new System.Drawing.Point(22, 79);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(290, 27);
             this.button3.TabIndex = 102;
@@ -359,7 +359,7 @@ namespace ADO.NET_Homework
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1051, 527);
+            this.ClientSize = new System.Drawing.Size(1006, 457);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.pictureBox1);
@@ -378,7 +378,7 @@ namespace ADO.NET_Homework
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.dateTimePicker1);
             this.Name = "作業五";
-            this.Text = "Form1";
+            this.Text = "AdventuerWorks";
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
             this.bindingNavigator1.ResumeLayout(false);
             this.bindingNavigator1.PerformLayout();

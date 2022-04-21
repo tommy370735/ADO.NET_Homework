@@ -74,7 +74,7 @@ namespace ADO.NET_Homework
                 {
                     LinkLabel linkLabel = sender as LinkLabel;
                     SqlCommand command = new SqlCommand();
-                    command.CommandText = $"Select * from NewPhotoTable where CityName = '{linkLabel.Text}'";
+                    command.CommandText = $"Select * from NewPhotoTable where CityName = '{linkLabel.Text}'";//+$"Select Description from NewPhotoTable where PhotoID = {linkLabel.Text}";
                     command.Connection = conn;
 
                     conn.Open();
@@ -86,13 +86,18 @@ namespace ADO.NET_Homework
                         System.IO.MemoryStream ms = new System.IO.MemoryStream(bytes);
                         PictureBox pic = new PictureBox();
                         pic.SizeMode = PictureBoxSizeMode.StretchImage;
-                        pic.Width = 120;
-                        pic.Height = 80;
+                        pic.Width = 180;
+                        pic.Height = 120;
                         pic.Image = Image.FromStream(ms);
                         pic.Click += Pic_Click;
                         this.flowLayoutPanel1.Controls.Add(pic);
 
                     }
+                    //dataReader.NextResult();
+                    //while (dataReader.Read())
+                    //{
+                    //    label2.Text = dataReader[]
+                    //}
                 }
             }
             catch (Exception ex)
@@ -102,7 +107,7 @@ namespace ADO.NET_Homework
         }
 
         private void Pic_Click(object sender, EventArgs e)
-        {
+        { 
             Form f = new Form();
             f.BackgroundImage = ((PictureBox)sender).Image;
             f.BackgroundImageLayout = ImageLayout.Stretch;

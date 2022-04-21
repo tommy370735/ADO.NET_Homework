@@ -309,7 +309,7 @@ namespace ADO.NET作業2_VS複習
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
-            // Form10
+            // Homework_01
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -338,8 +338,8 @@ namespace ADO.NET作業2_VS複習
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtB_1);
             this.Controls.Add(this.label6);
-            this.Name = "Form10";
-            this.Text = "Form1";
+            this.Name = "Homework_01";
+            this.Text = "標準練習";
             this.ResumeLayout(false);
             this.PerformLayout();
 
