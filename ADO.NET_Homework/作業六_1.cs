@@ -74,7 +74,7 @@ namespace ADO.NET_Homework
                 {
                     LinkLabel linkLabel = sender as LinkLabel;
                     SqlCommand command = new SqlCommand();
-                    command.CommandText = $"Select * from NewPhotoTable where CityName = '{linkLabel.Text}'";//+$"Select Description from NewPhotoTable where PhotoID = {linkLabel.Text}";
+                    command.CommandText = $"Select * from NewPhotoTable where CityName = '{linkLabel.Text}'";//+$"Select PhotoID,Description from NewPhotoTable where CityName = '{linkLabel.Text}'";
                     command.Connection = conn;
 
                     conn.Open();
@@ -88,15 +88,19 @@ namespace ADO.NET_Homework
                         pic.SizeMode = PictureBoxSizeMode.StretchImage;
                         pic.Width = 180;
                         pic.Height = 120;
+                        pic.Tag = dataReader["PhotoID"];
                         pic.Image = Image.FromStream(ms);
                         pic.Click += Pic_Click;
                         this.flowLayoutPanel1.Controls.Add(pic);
 
                     }
                     //dataReader.NextResult();
+                    //listBox1.Items.Clear();
+                    //listBox2.Items.Clear();
                     //while (dataReader.Read())
                     //{
-                    //    label2.Text = dataReader[]
+                    //    listBox1.Items.Add(dataReader[0]);
+                    //    listBox2.Items.Add(dataReader[1]);
                     //}
                 }
             }
@@ -107,10 +111,38 @@ namespace ADO.NET_Homework
         }
 
         private void Pic_Click(object sender, EventArgs e)
-        { 
+        {
+            PictureBox pic = sender as PictureBox;
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(Settings.Default.TravelDBConnectionString))
+                {
+                    SqlCommand command = new SqlCommand();
+                    command.CommandText = $"Select Description from NewPhotoTable where PhotoID = '{pic.Tag}'";
+                    command.Connection = conn;
+
+                    conn.Open();
+                    SqlDataReader dataReader = command.ExecuteReader();
+                    while (dataReader.Read())
+                    {
+                        this.textBox1.Text = dataReader["Description"].ToString();
+
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            
             Form f = new Form();
             f.BackgroundImage = ((PictureBox)sender).Image;
-            f.BackgroundImageLayout = ImageLayout.Stretch;
+            f.BackgroundImageLayout = ImageLayout.Zoom;
+            f.Width = 381;
+            f.Height = 305;
+            f.Text = textBox1.Text;
             f.Show();
         }
 
@@ -118,6 +150,8 @@ namespace ADO.NET_Homework
         {
             Homework_6_2 H6 = new Homework_6_2();
             H6.Show();
+            this.Close();
+
         }
 
 

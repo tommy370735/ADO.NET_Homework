@@ -21,6 +21,11 @@ namespace ADO.NET_Homework
             this.photoPictureBox.AllowDrop = true;
             this.photoPictureBox.DragEnter += PhotoPictureBox_DragEnter;
             this.photoPictureBox.DragDrop += PhotoPictureBox_DragDrop;
+
+            this.cityTableAdapter1.Fill(this.travelDataSet.City);
+            this.bindingSource1.DataSource = this.travelDataSet.City;
+            this.dataGridView1.DataSource = this.bindingSource1;
+
         }
 
         private void PhotoPictureBox_DragDrop(object sender, DragEventArgs e)
@@ -113,16 +118,79 @@ namespace ADO.NET_Homework
                     conn.Open();
                     command.ExecuteNonQuery();
 
-                    this.newPhotoTableTableAdapter.Fill(this.travelDataSet.NewPhotoTable);
-                    this.newPhotoTableBindingSource.DataSource = this.travelDataSet.NewPhotoTable;
-                    this.newPhotoTableDataGridView.DataSource = this.newPhotoTableBindingSource;
-                    this.newPhotoTableBindingSource.MoveLast();
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+
+            this.newPhotoTableTableAdapter.Fill(this.travelDataSet.NewPhotoTable);
+            this.newPhotoTableBindingSource.DataSource = this.travelDataSet.NewPhotoTable;
+            this.newPhotoTableDataGridView.DataSource = this.newPhotoTableBindingSource;
+            this.newPhotoTableBindingSource.MoveLast();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.bindingSource1.MoveFirst();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.bindingSource1.MovePrevious();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            this.bindingSource1.MoveNext();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            this.bindingSource1.MoveLast();
+        }
+
+        private void bindingSource1_CurrentChanged(object sender, EventArgs e)
+        {
+            this.label1.Text = $"{this.bindingSource1.Position + 1} / {this.bindingSource1.Count}";
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(Settings.Default.TravelDBConnectionString))
+                {
+                    SqlCommand command = new SqlCommand();
+                    command.CommandText = $"Insert into City (CityName) values (@CityName)";
+                    command.Connection = conn;
+
+                    System.IO.MemoryStream ms = new System.IO.MemoryStream();
+
+                    command.Parameters.Add("@CityName", SqlDbType.NVarChar, 50).Value = this.textBox1.Text;
+
+                    conn.Open();
+                    command.ExecuteNonQuery();
+                }
+              
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            this.cityTableAdapter1.Fill(this.travelDataSet.City);
+            this.bindingSource1.DataSource = this.travelDataSet.City;
+            this.dataGridView1.DataSource = this.bindingSource1;
+            this.bindingSource1.MoveLast();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            作業六_1 H6 = new 作業六_1();
+            H6.Show();
+            this.Close();
         }
     }
-}
+    }
+

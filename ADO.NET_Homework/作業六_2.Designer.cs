@@ -30,10 +30,10 @@ namespace ADO.NET_Homework
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.Label photoLabel;
             System.Windows.Forms.Label cityNameLabel;
             System.Windows.Forms.Label descriptionLabel;
             System.Windows.Forms.Label photoLabel1;
+            System.Windows.Forms.Label label2;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Homework_6_2));
             this.button1 = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
@@ -63,31 +63,35 @@ namespace ADO.NET_Homework
             this.cityNameComboBox = new System.Windows.Forms.ComboBox();
             this.descriptionTextBox = new System.Windows.Forms.TextBox();
             this.photoPictureBox = new System.Windows.Forms.PictureBox();
-            photoLabel = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.cityTableAdapter1 = new ADO.NET_Homework.TravelDataSetTableAdapters.CityTableAdapter();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button8 = new System.Windows.Forms.Button();
             cityNameLabel = new System.Windows.Forms.Label();
             descriptionLabel = new System.Windows.Forms.Label();
             photoLabel1 = new System.Windows.Forms.Label();
+            label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.travelDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.newPhotoTableBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.newPhotoTableBindingNavigator)).BeginInit();
             this.newPhotoTableBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.newPhotoTableDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.photoPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // photoLabel
-            // 
-            photoLabel.AutoSize = true;
-            photoLabel.Location = new System.Drawing.Point(419, 101);
-            photoLabel.Name = "photoLabel";
-            photoLabel.Size = new System.Drawing.Size(35, 12);
-            photoLabel.TabIndex = 7;
-            photoLabel.Text = "Photo:";
             // 
             // cityNameLabel
             // 
             cityNameLabel.AutoSize = true;
-            cityNameLabel.Location = new System.Drawing.Point(509, 59);
+            cityNameLabel.Location = new System.Drawing.Point(323, 52);
             cityNameLabel.Name = "cityNameLabel";
             cityNameLabel.Size = new System.Drawing.Size(58, 12);
             cityNameLabel.TabIndex = 9;
@@ -96,7 +100,7 @@ namespace ADO.NET_Homework
             // descriptionLabel
             // 
             descriptionLabel.AutoSize = true;
-            descriptionLabel.Location = new System.Drawing.Point(509, 85);
+            descriptionLabel.Location = new System.Drawing.Point(323, 78);
             descriptionLabel.Name = "descriptionLabel";
             descriptionLabel.Size = new System.Drawing.Size(61, 12);
             descriptionLabel.TabIndex = 11;
@@ -105,15 +109,24 @@ namespace ADO.NET_Homework
             // photoLabel1
             // 
             photoLabel1.AutoSize = true;
-            photoLabel1.Location = new System.Drawing.Point(509, 110);
+            photoLabel1.Location = new System.Drawing.Point(323, 103);
             photoLabel1.Name = "photoLabel1";
             photoLabel1.Size = new System.Drawing.Size(35, 12);
             photoLabel1.TabIndex = 13;
             photoLabel1.Text = "Photo:";
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new System.Drawing.Point(20, 290);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(58, 12);
+            label2.TabIndex = 23;
+            label2.Text = "City Name:";
+            // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(471, 166);
+            this.button1.Location = new System.Drawing.Point(304, 132);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(77, 37);
             this.button1.TabIndex = 0;
@@ -262,7 +275,7 @@ namespace ADO.NET_Homework
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
             this.newPhotoTableBindingNavigatorSaveItem});
-            this.newPhotoTableBindingNavigator.Location = new System.Drawing.Point(77, 279);
+            this.newPhotoTableBindingNavigator.Location = new System.Drawing.Point(642, 289);
             this.newPhotoTableBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.newPhotoTableBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
             this.newPhotoTableBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
@@ -283,9 +296,9 @@ namespace ADO.NET_Homework
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewImageColumn1});
             this.newPhotoTableDataGridView.DataSource = this.newPhotoTableBindingSource;
-            this.newPhotoTableDataGridView.Location = new System.Drawing.Point(15, 30);
+            this.newPhotoTableDataGridView.Location = new System.Drawing.Point(580, 40);
             this.newPhotoTableDataGridView.Name = "newPhotoTableDataGridView";
-            this.newPhotoTableDataGridView.RowTemplate.Height = 24;
+            this.newPhotoTableDataGridView.RowTemplate.Height = 50;
             this.newPhotoTableDataGridView.Size = new System.Drawing.Size(439, 220);
             this.newPhotoTableDataGridView.TabIndex = 8;
             // 
@@ -312,11 +325,12 @@ namespace ADO.NET_Homework
             // 
             this.dataGridViewImageColumn1.DataPropertyName = "Photo";
             this.dataGridViewImageColumn1.HeaderText = "Photo";
+            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(471, 213);
+            this.button2.Location = new System.Drawing.Point(304, 179);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(77, 37);
             this.button2.TabIndex = 9;
@@ -328,7 +342,7 @@ namespace ADO.NET_Homework
             // 
             this.cityNameComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.newPhotoTableBindingSource, "CityName", true));
             this.cityNameComboBox.FormattingEnabled = true;
-            this.cityNameComboBox.Location = new System.Drawing.Point(576, 56);
+            this.cityNameComboBox.Location = new System.Drawing.Point(390, 49);
             this.cityNameComboBox.Name = "cityNameComboBox";
             this.cityNameComboBox.Size = new System.Drawing.Size(171, 20);
             this.cityNameComboBox.TabIndex = 10;
@@ -336,7 +350,7 @@ namespace ADO.NET_Homework
             // descriptionTextBox
             // 
             this.descriptionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.newPhotoTableBindingSource, "Description", true));
-            this.descriptionTextBox.Location = new System.Drawing.Point(576, 82);
+            this.descriptionTextBox.Location = new System.Drawing.Point(390, 75);
             this.descriptionTextBox.Name = "descriptionTextBox";
             this.descriptionTextBox.Size = new System.Drawing.Size(171, 22);
             this.descriptionTextBox.TabIndex = 12;
@@ -345,18 +359,127 @@ namespace ADO.NET_Homework
             // 
             this.photoPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.photoPictureBox.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.newPhotoTableBindingSource, "Photo", true));
-            this.photoPictureBox.Location = new System.Drawing.Point(576, 110);
+            this.photoPictureBox.Location = new System.Drawing.Point(390, 103);
             this.photoPictureBox.Name = "photoPictureBox";
             this.photoPictureBox.Size = new System.Drawing.Size(171, 140);
             this.photoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.photoPictureBox.TabIndex = 14;
             this.photoPictureBox.TabStop = false;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(25, 40);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(240, 190);
+            this.dataGridView1.TabIndex = 15;
+            // 
+            // cityTableAdapter1
+            // 
+            this.cityTableAdapter1.ClearBeforeFill = true;
+            // 
+            // bindingSource1
+            // 
+            this.bindingSource1.CurrentChanged += new System.EventHandler(this.bindingSource1_CurrentChanged);
+            // 
+            // button3
+            // 
+            this.button3.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button3.Location = new System.Drawing.Point(59, 244);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(29, 31);
+            this.button3.TabIndex = 16;
+            this.button3.Text = "<<";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button4
+            // 
+            this.button4.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button4.Location = new System.Drawing.Point(94, 244);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(29, 31);
+            this.button4.TabIndex = 17;
+            this.button4.Text = "<";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button5
+            // 
+            this.button5.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button5.Location = new System.Drawing.Point(157, 244);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(29, 31);
+            this.button5.TabIndex = 18;
+            this.button5.Text = ">";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button6
+            // 
+            this.button6.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button6.Location = new System.Drawing.Point(192, 244);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(29, 31);
+            this.button6.TabIndex = 19;
+            this.button6.Text = ">>";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // button7
+            // 
+            this.button7.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button7.Location = new System.Drawing.Point(192, 281);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(89, 31);
+            this.button7.TabIndex = 20;
+            this.button7.Text = "加入新城市";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(129, 253);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 12);
+            this.label1.TabIndex = 21;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(84, 287);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(93, 22);
+            this.textBox1.TabIndex = 22;
+            // 
+            // button8
+            // 
+            this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.button8.Font = new System.Drawing.Font("標楷體", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button8.Location = new System.Drawing.Point(351, 272);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(234, 49);
+            this.button8.TabIndex = 24;
+            this.button8.Text = "新增完成，返回相簿";
+            this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
             // Homework_6_2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(791, 355);
+            this.ClientSize = new System.Drawing.Size(1037, 340);
+            this.Controls.Add(this.button8);
+            this.Controls.Add(label2);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.button7);
+            this.Controls.Add(this.button6);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(cityNameLabel);
             this.Controls.Add(this.cityNameComboBox);
             this.Controls.Add(descriptionLabel);
@@ -365,11 +488,11 @@ namespace ADO.NET_Homework
             this.Controls.Add(this.photoPictureBox);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.newPhotoTableDataGridView);
-            this.Controls.Add(photoLabel);
             this.Controls.Add(this.newPhotoTableBindingNavigator);
             this.Controls.Add(this.button1);
             this.Name = "Homework_6_2";
             this.Text = "相片管理_2";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.Homework_6_2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.travelDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.newPhotoTableBindingSource)).EndInit();
@@ -378,6 +501,8 @@ namespace ADO.NET_Homework
             this.newPhotoTableBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.newPhotoTableDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.photoPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -405,13 +530,24 @@ namespace ADO.NET_Homework
         private System.Windows.Forms.ToolStripButton newPhotoTableBindingNavigatorSaveItem;
         private System.Windows.Forms.BindingNavigator newPhotoTableBindingNavigator;
         private System.Windows.Forms.DataGridView newPhotoTableDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ComboBox cityNameComboBox;
         private System.Windows.Forms.TextBox descriptionTextBox;
         private System.Windows.Forms.PictureBox photoPictureBox;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private TravelDataSetTableAdapters.CityTableAdapter cityTableAdapter1;
+        private System.Windows.Forms.BindingSource bindingSource1;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button8;
     }
 }
