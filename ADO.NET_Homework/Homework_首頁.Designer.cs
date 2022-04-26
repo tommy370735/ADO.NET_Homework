@@ -88,6 +88,7 @@ namespace ADO.NET_Homework
             // 
             // splitContainer2.Panel1
             // 
+            this.splitContainer2.Panel1.AutoScroll = true;
             this.splitContainer2.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.splitContainer2.Panel1.Controls.Add(this.button7);
             this.splitContainer2.Panel1.Controls.Add(this.button6);
@@ -99,6 +100,7 @@ namespace ADO.NET_Homework
             // 
             // splitContainer2.Panel2
             // 
+            this.splitContainer2.Panel2.AutoScroll = true;
             this.splitContainer2.Panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("splitContainer2.Panel2.BackgroundImage")));
             this.splitContainer2.Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.splitContainer2.Size = new System.Drawing.Size(1301, 537);
